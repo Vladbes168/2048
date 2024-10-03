@@ -135,6 +135,7 @@ html {
   height: 470px;
   background-color: transparent;
   box-shadow: 0px 0px 17px 6px rgb(163, 135, 17);
+  border-radius: 5px;
 }
 
 .grid {
@@ -142,11 +143,27 @@ html {
   height: 100%;
 }
 
-.greid__cell {
+.grid__cell {
   width: 25%;
   height: 25%;
   background: rgba(238, 228, 218, 0.35);
   float: left;
   padding: 8px;
   background-clip: content-box;
+  font-size: 24px;
+}
+.grid__cell .tile {
+  background-color: transparent;
+  text-align: center;
+  align-content: center;
+  font-size: 46px;
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  color: var(--two);
+  border: 4px solid var(--two);
+}
+
+:root {
+  --two: rgb(152, 161, 161);
 }/*# sourceMappingURL=main.css.map */
