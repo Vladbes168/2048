@@ -4,15 +4,53 @@ body {
   background-image: linear-gradient(0deg, rgb(93, 69, 143) 0%, rgb(32, 43, 70) 100%);
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
-.wrraper {
-  max-width: 500px;
-  margin: 0 auto;
-  height: 100%;
+.game__board {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header {
+  display: flex;
+  max-width: 470px;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 100px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 900;
+  color: #776e65;
+}
+
+.score {
+  display: flex;
+  gap: 20px;
+}
+
+.previous-result {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: #776e65;
+  align-items: center;
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.current-score {
+  width: 100px;
+  height: 40px;
+  background-color: #776e65;
 }
 
 .unselectable {
@@ -136,34 +174,112 @@ html {
   background-color: transparent;
   box-shadow: 0px 0px 17px 6px rgb(163, 135, 17);
   border-radius: 5px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px;
   width: 100%;
   height: 100%;
 }
 
+.grid-row {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
 .grid__cell {
   width: 25%;
-  height: 25%;
-  background: rgba(238, 228, 218, 0.35);
-  float: left;
-  padding: 8px;
-  background-clip: content-box;
+  height: 100%;
+  background: var(background-color);
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 24px;
 }
-.grid__cell .tile {
-  background-color: transparent;
+
+.tile {
+  background-color: #776e65;
   text-align: center;
-  align-content: center;
   font-size: 46px;
   font-weight: 900;
   width: 100%;
   height: 100%;
   color: var(--two);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tile.tile-2 {
+  background-color: var(--two);
   border: 4px solid var(--two);
+  color: #776e65;
+}
+.tile.tile-4 {
+  background-color: var(--four);
+  border: 4px solid var(--four);
+  color: #776e65;
+}
+.tile.tile-8 {
+  background-color: var(--eight);
+  border: 4px solid var(--eight);
+  color: white;
+}
+.tile.tile-16 {
+  background-color: var(--sixteen);
+  border: 4px solid var(--sixteen);
+  color: white;
+}
+.tile.tile-32 {
+  background-color: var(--thirtytwo);
+  border: 4px solid var(--thirtytwo);
+  color: white;
+}
+.tile.tile-64 {
+  background-color: var(--sixtyfour);
+  border: 4px solid var(--sixtyfour);
+  color: white;
+}
+.tile.tile-128 {
+  background-color: var(--onehundredtwentyeight);
+  border: 4px solid var(--onehundredtwentyeight);
+  color: white;
+}
+.tile.tile-256 {
+  background-color: var(--twohundredfiftysix);
+  border: 4px solid var(--twohundredfiftysix);
+  color: white;
+}
+.tile.tile-512 {
+  background-color: var(--fivehundredtwelve);
+  border: 4px solid var(--fivehundredtwelve);
+  color: white;
+}
+.tile.tile-1024 {
+  background-color: var(--onethousandtwentyfour);
+  border: 4px solid var(--onethousandtwentyfour);
+  color: white;
 }
 
 :root {
   --two: rgb(152, 161, 161);
+  --two: #eee4da;
+  --four: #ede0c8;
+  --eight: #f2b179;
+  --sixteen: #f59563;
+  --thirtytwo: #f67c5f;
+  --sixtyfour: #f3623c;
+  --onehundredtwentyeight: #f9c74f;
+  --twohundredfiftysix: #f9c74f;
+  --fivehundredtwelve: #f9c74f;
+  --onethousandtwentyfour: #f9c74f;
+  --background-color: rgba(238, 228, 218, 0.35);
 }/*# sourceMappingURL=main.css.map */
