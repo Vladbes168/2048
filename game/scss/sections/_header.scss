@@ -26,16 +26,20 @@ body {
   display: flex;
   max-width: 470px;
   margin: 0 auto;
-  justify-content: space-between;
-  // margin-bottom: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+
   margin-top: 100px;
   align-items: center;
   margin-bottom: 30px;
 }
 .title {
+  text-align: center;
   font-size: 64px;
   font-weight: 900;
   color: #776e65;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 .score {
   display: flex;
@@ -43,17 +47,38 @@ body {
 }
 .previous-result {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 100px;
-  height: 40px;
-  background-color: #776e65;
   align-items: center;
-  color: aliceblue;
-  font-size: 24px;
-  font-weight: 700;
+  padding: 5px 10px;
+  background-color: #776e65;
+  text-align: center;
+  .subtitle {
+    color: aliceblue;
+    font-size: 24px;
+  }
+  .score {
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 .current-score {
-  width: 100px;
-  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
   background-color: #776e65;
+  text-align: center;
+
+  .subtitle {
+    color: aliceblue;
+    font-size: 24px;
+  }
+  .score {
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
