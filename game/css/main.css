@@ -7,6 +7,10 @@ body {
   overflow: hidden;
 }
 
+.none {
+  display: none;
+}
+
 .game__board {
   width: 100%;
   display: flex;
@@ -212,6 +216,7 @@ html {
 }
 
 .grid__cell {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: #776e65;
@@ -219,9 +224,11 @@ html {
 }
 
 .tile {
+  --y: 2;
+  --x: 1;
   position: absolute;
-  top: calc(1 * (25% + 2px));
-  left: calc(2 * (25% + 2px));
+  top: calc(var(--y) * (25% + 2px));
+  left: calc(var(--x) * (25% + 2px));
   background-color: #776e65;
   text-align: center;
   font-size: 46px;
@@ -229,10 +236,13 @@ html {
   width: calc(25% - 6px);
   height: calc(25% - 6px);
   color: var(--two);
+  z-index: 5;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 100ms;
+  animation: show 200ms;
 }
 .tile.tile-2 {
   background-color: var(--two);
@@ -296,4 +306,11 @@ html {
   --fivehundredtwelve: #f9c74f;
   --onethousandtwentyfour: #f9c74f;
   --background-color: rgba(238, 228, 218, 0.35);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
 }/*# sourceMappingURL=main.css.map */
