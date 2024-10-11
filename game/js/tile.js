@@ -16,5 +16,7 @@ setXY(x, y) {
 setValue(value) {
     this.value = value
     this.tileElement.textContent = this.value
+    console.log(this.tileElement);
+    console.log(this.tileElement.textContent);
 }
 }

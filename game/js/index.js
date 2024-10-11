@@ -41,20 +41,38 @@ function handleInput(event) {
 
 
 function moveUp() {
-    slideTiles(grid.cellsGroupedByColumn)
+    slideTiles(grid.cellsGroupedByColumn) 
 }
 
 function slideTiles(groupedCells) {
 groupedCells.forEach(group => slidetilesIngroup(group));
-
 }
 
 function slidetilesIngroup(group) {
-for(let i = 1; i < group.length; i++) {
+for (let i = 1; i < group.length; i++) {
+     
     if(group[i].isEmpty()) {
         continue;
     }
 
     const cellWithTile = group[i]
+  
+    let targetCell
+    let j = i - 1
+    while(j >= 0 && group[j].canAccept(cellWithTile.linkedTile)) {
+        targetCell = group[j]
+        j--;
+    }
+    if(!targetCell) {
+        continue;
+    }   
+
+    if(targetCell.isEmpty()) {
+        targetCell.linkTile(cellWithTile.linkedTile);
+    } else {
+        targetCell.linkTileForMerge(cellWithTile.linkedTile)
+    }
+
+    cellWithTile.unlinkTile();
 }
 }

@@ -17,4 +17,22 @@ export class Cell {
     isEmpty() {
         return !this.linkedTile
     }
+
+    linkTileForMerge(tile) {
+        tile.setXY(this.x, this.y)
+        this.linkedTileForMerge = tile
+    }
+    
+    hasTileForMerge() {
+        return !!this.linkedTileForMerge;
+    }
+
+    canAccept(newTile) {
+        console.log(this.isEmpty() || (!this.hasTileForMerge() && this.linkedTile.value === newTile.value));
+        
+        return this.isEmpty() || (!this.hasTileForMerge() && this.linkedTile.value === newTile.value)
+    }
+    unlinkTile() {
+        this.linkedTile = null
+    }
 }
