@@ -3,6 +3,7 @@
 import { Grid } from "./grid";
 import { Tile } from "./tile";
 
+export const currentScore = document.querySelector('.current-score .score')
 
 const gameBoard = document.querySelector('.grid');
 const grid = new Grid(gameBoard)
@@ -41,7 +42,11 @@ function handleInput(event) {
 
 
 function moveUp() {
-    slideTiles(grid.cellsGroupedByColumn) 
+    slideTiles(grid.cellsGroupedByColumn)
+   grid.cells.forEach(cell => {
+    cell.hasTileForMerge() && cell.mergeTiles()
+   })
+   
 }
 
 function slideTiles(groupedCells) {

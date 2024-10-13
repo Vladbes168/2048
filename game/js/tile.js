@@ -16,7 +16,22 @@ setXY(x, y) {
 setValue(value) {
     this.value = value
     this.tileElement.textContent = this.value
-    console.log(this.tileElement);
-    console.log(this.tileElement.textContent);
+}
+
+setClass() {
+    this.tileElement.classList.add(`tile-${this.value}`)
+}
+
+setCurrentScore(currentScore, value) {
+    let changeValue = +currentScore.textContent ;
+    changeValue = 0 ? value : changeValue + value
+    currentScore.textContent = changeValue
+    
+    
+    
+}
+
+removeFromDOM() {
+    this.tileElement.remove()
 }
 }
